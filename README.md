@@ -1,0 +1,1 @@
+This assignment includes setting up authentication, which allows user to register with proper authentication. Google authentication is also included in this project with proper commits in this project. As a test, **rich@gc.ca** is used as a username and **Test123$** is used as a password. 
