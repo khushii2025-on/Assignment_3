@@ -1,0 +1,23 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+
+# Rider IDE
+.idea/
+
+# User-specific files
+*.swp
+*.tmp
+
+# Azure / secrets
+appsettings.*.json
+
+# Others
+*.log

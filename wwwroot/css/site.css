@@ -1,0 +1,13 @@
+body {
+    background-color: #f5f7fa;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: #004aad;
+}
+
+.btn-primary {
+    background-color: #ff6b35;
+    border: none;
+}

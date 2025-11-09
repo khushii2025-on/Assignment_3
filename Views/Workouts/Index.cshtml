@@ -1,0 +1,50 @@
+﻿@model IEnumerable<FitnessTracker.Models.Workout>
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "Workouts";
+}
+
+<h1>Workouts</h1>
+
+@* Show Create button only for signed-in users *@
+@if (SignInManager.IsSignedIn(User))
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New Workout</a>
+    </p>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Workout Name</th>
+            <th>Date</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @* Loop through workouts in the Model *@
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.WorkoutName</td>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.Notes</td>
+                <td>
+                    @* Show Edit/Delete links only to signed-in users *@
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <text>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </text>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
